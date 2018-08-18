@@ -18,6 +18,7 @@ void main(){
   */
 float * input(){
     float *nums = malloc(sizeof(float)*3);
+    printf("Type the values for a,b,c and press enter after each number.");
     scanf("%f %f %f",&nums[0],&nums[1],&nums[2]);
     return nums;
 }
