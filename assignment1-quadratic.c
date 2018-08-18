@@ -3,6 +3,7 @@
 #include <math.h>
 float * input();
 float * compute();
+void output();
 void main(){
     float *p;
     p = input();
@@ -11,14 +12,15 @@ void main(){
         printf("%f ",p[loop]);*/
     float *c;
     c = compute(p);
-    if (c==NULL){
+    /*if (c==NULL){
         printf("The function doesn't have root.");
     }else{
         int loop1;
         for(loop1=0;loop1<2;loop1++)
             printf("%f ",c[loop1]);
 
-    }
+    }*/
+    output(c);
     
 
 
@@ -66,4 +68,15 @@ float * compute(float *arr){
     return results;
     
 
+}
+/*1)To return a array we use asterisk 
+  2)Printf is used fromm stdio.h header file to print on the terminal.
+  */
+void output(float *a){
+    if (a==NULL){
+        printf("The given quadratic equation has no roots.");
+    }
+    else{
+        printf("The two roots are %f %f",a[0],a[1]);
+    }
 }
