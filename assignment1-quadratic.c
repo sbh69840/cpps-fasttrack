@@ -12,6 +12,7 @@ void main(){
         printf("%f ",p[loop]);*/
     float *c;
     c = compute(p);
+    free(p);
     /*if (c==NULL){
         printf("The function doesn't have root.");
     }else{
@@ -21,7 +22,7 @@ void main(){
 
     }*/
     output(c);
-    
+    free(c);
 
 
 
@@ -56,13 +57,21 @@ float * compute(float *arr){
     float *results = malloc(sizeof(float)*3);
     float d = (b*b)-4*a*c;
     if (d<0){
-        return NULL;
+        float real,imaginary;
+        real = (-b)/(2*a);
+        imaginary = (sqrtf(-d))/(2*a);
+        results[0]=real;
+        results[1]=imaginary;
+        results[2]=d;
+        return results;
+
     }
     else{
-        x_plus = (-b + sqrt(d))/(2*a);
-        x_minus = (-b - sqrt(d))/(2*a);
+        x_plus = (-b + sqrtf(d))/(2*a);
+        x_minus = (-b - sqrtf(d))/(2*a);
         results[0]=x_plus;
         results[1]=x_minus;
+        results[2]=d;
 
     }
     return results;
@@ -73,8 +82,8 @@ float * compute(float *arr){
   2)Printf is used fromm stdio.h header file to print on the terminal.
   */
 void output(float *a){
-    if (a==NULL){
-        printf("The given quadratic equation has no roots.");
+    if (a[2]<0){
+        printf("The given quadratic equation has imaginary roots. %f+i(%f) and %f-i(%f)",a[0],a[1],a[0],a[1]);
     }
     else{
         printf("The two roots are %f %f",a[0],a[1]);
