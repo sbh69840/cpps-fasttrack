@@ -11,7 +11,7 @@ struct qequation{
 };
 void input(struct qequation *e);
 void find_roots(struct root *r1,struct root *r2,struct qequation e,float *d);
-void output(struct root r1,struct root r2,float d,struct qequation e);
+void output(struct root r1,struct root r2,float d);
 void main(){
 	struct qequation e;
 	struct root r1;
@@ -19,7 +19,7 @@ void main(){
 	float d;
 	input(&e);
 	find_roots(&r1,&r2,e,&d);
-	output(r1,r2,d,e);
+	output(r1,r2,d);
 }
 void input(struct qequation *e){
 	printf("Type the values of a,b,c of quadratic equation.");
@@ -50,7 +50,7 @@ void find_roots(struct root *r1,struct root *r2,struct qequation e,float *d){
 		r2->imaginary = sqrt(*d)/(2*e.a);
 	}
 }
-void output(struct root r1,struct root r2,float d,struct qequation e){
+void output(struct root r1,struct root r2,float d){
 	if (d<0){
 		printf("The roots are imaginary. %f + %fi and %f + %fi",r1.real,r1.imaginary,r1.real,r1.imaginary);
 	}
