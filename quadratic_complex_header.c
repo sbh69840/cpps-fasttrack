@@ -27,6 +27,13 @@ void input(struct quadratic *q){
     printf("Type the three coefficients of quadratic equation.");
     scanf("%f %f %f",&q->a,&q->b,&q->c);
 }
+/*
+ * compute function recieves three parameters:
+ * input parameters q : coefficients a,b,c
+ * Outut parameters r,d : roots of the quadratic equation and value of d
+ * Return Parameter : Value of Discrminant
+ * Note: ( return value >= 0)  If roots are not complex imaginary parts of r is zero
+ */
 void compute(struct roots *r,struct quadratic q,float *d){
     *d=(q.b*q.b)-(4*q.a*q.c);
     if (*d<0){
