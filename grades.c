@@ -11,9 +11,12 @@ void main(){
 }
 void input(float *marks){
     printf("Type the marks.");
-    scanf("%f",&marks);
+    float mar;
+    scanf("%f",&mar);
+    *marks = mar;
 }
 void grades(float marks,char grade[]){
+    
     if (marks>95){
         grade[0] = 'A';
         grade[1]= '1';
