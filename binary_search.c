@@ -35,6 +35,12 @@ void input_search_ele(float *search){
     scanf("%f",&s);
     *search = s;
 }
+/*
+binary_search receives 4 parameter:
+INPUT PARAMETERS a[],length,search: array,it's length and element to be searched respc.
+OUTPUT PARAMETERS index: Index of the element.
+RETURN PARAMETERS : doesn't return anything.
+*/
 void binary_search(float a[],float length,int *index,float search){
     int first_index,last_index,mid_index;
     first_index=0;

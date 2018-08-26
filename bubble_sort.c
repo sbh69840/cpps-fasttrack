@@ -26,6 +26,12 @@ void input_array(float a[],float length){
         scanf("%f",&a[i]);
     }
 }
+/*
+bubble_sort receives 2 parameter:
+INPUT PARAMETERS a[],length: array and length of array.
+OUTPUT PARAMETERS sorted array a[]: sorted array
+RETURN PARAMETERS : doesn't return anything. 
+*/
 void bubble_sort(float a[],float length){
     int i,j,swap_count;
     float tmp;

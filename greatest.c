@@ -4,6 +4,12 @@ void input(float a[]){
     scanf("%f %f %f",&a[0],&a[1],&a[2]);
 
 }
+/*
+greatest_integer receives 2 parameter:
+INPUT PARAMETERS a[]: array which contains input. 
+OUTPUT PARAMETERS great: greatest number
+RETURN PARAMETERS : doesn't return anything. 
+*/
 void greatest_integer(float *great,float a[]){
     if(a[0]>a[1]&&a[1]>a[2]){
         *great= a[0];
