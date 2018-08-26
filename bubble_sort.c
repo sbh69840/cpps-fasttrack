@@ -27,16 +27,21 @@ void input_array(float a[],float length){
     }
 }
 void bubble_sort(float a[],float length){
-    int i,j;
+    int i,j,swap_count;
     float tmp;
     for(i=0;i<length-1;i++){
+        swap_count=0;
         for(j=0;j<length-i-1;j++){
             if (a[j]>a[j+1]){
                 tmp=a[j];
                 a[j]=a[j+1];
                 a[j+1]=tmp;
+                swap_count++;
 
             }
+        }
+        if(swap_count==0){
+            break;
         }
     }
 }
