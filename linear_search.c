@@ -16,6 +16,7 @@ void linear_search(int l,float array[l],float search){
 	for(i=0;i<l;i++){
 		if(array[i]==search){
 			printf("The element to be searched is the %dth element in the array",i+1);
+			break;
 		}
 		if(i==l){
 			printf("The element was not found in the array");
